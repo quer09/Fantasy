@@ -32,7 +32,7 @@ public partial class CountryEdit
                 return;
             }
             var message = await responseHttp.GetErrorMessageAsync();
-            await SweetAlertService.FireAsync(Localizer["Error"], message, SweetAlertIcon.Error);
+            await SweetAlertService.FireAsync(Localizer["Error"], Localizer[message!], SweetAlertIcon.Error);
             return;
         }
         country = responseHttp.Response;
@@ -45,7 +45,7 @@ public partial class CountryEdit
         if (responseHttp.Error)
         {
             var message = await responseHttp.GetErrorMessageAsync();
-            await SweetAlertService.FireAsync(Localizer["Error"], message, SweetAlertIcon.Error);
+            await SweetAlertService.FireAsync(Localizer["Error"], Localizer[message!], SweetAlertIcon.Error);
             return;
         }
 
